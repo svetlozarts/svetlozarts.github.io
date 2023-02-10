@@ -22,11 +22,17 @@ padding: 20px;
 background-color: #009DFF;
 color: #fff;
 text-decoration: none;
-font-size: 30px;   
+font-size: 30px;
+box-shadow: 0px 0px 5px black;  
+}
+
+#time{
+    text-shadow: 2px 2px 5px black;
 }
 
 .title{
 text-align: center;
+text-shadow: 2px 2px 5px black;
 }
 
 #break-timer{
@@ -44,6 +50,10 @@ text-align: center;
     background-color: #fff;
     text-align: center;
     padding: 2px 0 2px 0;
+    box-shadow: 2px 2px 2px black;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
 }
 
 .info  {
@@ -52,13 +62,15 @@ text-align: center;
     border: 3px solid #009DFF;
     background-color: #fff;
     text-align: center;
+    box-shadow: 2px 2px 2px black;
+    font-size: 50px;
 }
 
 .container{
     height: 80vh;
     display: grid;
     gap: 10px;
-    margin: 0 10px 0 10px;
+    margin: 10px 10px 10px 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 100px 100px 100px 100px 100px;
     
