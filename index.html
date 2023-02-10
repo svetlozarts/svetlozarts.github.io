@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <title>ZPG PROGRAMA</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div id="time">
+            <a>12:00:00</a>
+        </div>
+        <div class="title">
+            <a>ЗПГ "Климент Тимирязев"</a>
+        </div>
+        <div id="break-timer" class="timer">
+            <a id="b_minutes">00</a><a class="semicolon">:</a><a id="b_seconds">10</a>
+        </div>
+        <div id="work-timer" class="timer">
+            <a id="w_minutes">00</a><a class="semicolon">:</a><a id="w_seconds">20</a>
+        </div>
+    </nav>
+
+    <div>
+        
+        <!--Cycle Counter-->
+        <p id="counter" class="timer">0</p>
+    </div>
+
+
+<script>
+    let time = document.getElementById("time");
+
+    
+    setInterval(() => {
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString([], {hour12: false,});
+    }, 1000);
+</script> 
+
+<script>
+var wm = document.getElementById('w_minutes');
+var ws = document.getElementById('w_seconds');
+
+var bm = document.getElementById('b_minutes');
+var bs = document.getElementById('b_seconds');
+
+var test;
+var mejd = document.getElementById('break-timer');
+var cha = document.getElementById('work-timer');
+
+var startTimer;
+
+var broi = 0;
+var chas = 20;
+var mejduchasie = 10;
+var nachalenchas = 18;
+var nachalenmin = 9;
+var formattedNumber = 0;
+
+
+setInterval(() => {
+    var hours = new Date().getHours();
+var minutes = new Date().getMinutes();
+    if (hours == nachalenchas && minutes == nachalenmin) {
+        if(startTimer === undefined){
+            startTimer = setInterval(timer, 1000)
+        } 
+    } 
+
+    if (broi == 1) {
+        mejduchasie = 25;
+    } else if (broi == 5) {
+        mejduchasie = 5;
+    } else mejduchasie = 10;
+
+    formattedNumber = mejduchasie.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false
+  });
+    
+  console.log(formattedNumber);
+
+}, 1000);
+
+        
+//Start Timer Function
+function timer(){
+    //Work Timer Countdown
+    if(ws.innerText != 0){
+        ws.innerText--;
+    } else if(wm.innerText != 0 && ws.innerText == 0){
+        ws.innerText = 59;
+        wm.innerText--;
+    }
+
+    //Break Timer Countdown
+    if(wm.innerText == 0 && ws.innerText == 0){
+        if(bs.innerText != 0){
+            bs.innerText--;
+        } else if(bm.innerText != 0 && bs.innerText == 0){
+            bs.innerText = 59;
+            bm.innerText--;
+        }
+    }
+
+    console.log(wm.innerText);
+    console.log(ws.innerText);
+
+    
+             
+    
+
+    //Increment Counter by one if one full cycle is completed
+    if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
+        wm.innerText = "00";
+        ws.innerText = chas;
+
+        bm.innerText = "00";
+        bs.innerText = mejduchasie;
+
+        document.getElementById('counter').innerText++;
+        broi++;
+    }
+}
+
+//Stop Timer Function
+function stopInterval(){
+    clearInterval(startTimer);
+}
+</script>
+</body>
+</html>

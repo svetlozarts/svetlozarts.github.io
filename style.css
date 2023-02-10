@@ -1,0 +1,39 @@
+* {
+margin: 0;   
+padding: 0;   
+box-sizing: border-box;
+}
+body {
+font-family: 'Roboto Slab', serif;
+}
+    
+a {
+text-decoration: none;
+font-size: 30px;
+}
+
+.navbar {
+display: grid;
+grid-template-columns: 10% 80% 5%;  
+align-items: center;   
+justify-content: space-between; 
+padding: 20px;
+background-color: #009DFF;
+color: #fff;
+text-decoration: none;
+font-size: 30px;   
+}
+
+.title{
+text-align: center;
+}
+
+#break-timer{
+    color: red;
+    text-shadow: 1px 1px 5px white;
+}
+
+#work-timer{
+    color: lime;
+    text-shadow: 1px 1px 5px black;
+}
