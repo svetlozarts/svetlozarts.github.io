@@ -5,6 +5,7 @@ box-sizing: border-box;
 }
 body {
 font-family: 'Roboto Slab', serif;
+background-color: #D3EEFF;
 }
     
 a {
@@ -36,4 +37,29 @@ text-align: center;
 #work-timer{
     color: lime;
     text-shadow: 1px 1px 5px black;
+}
+
+.box{
+    border: 3px solid #009DFF;
+    background-color: #fff;
+    text-align: center;
+    padding: 2px 0 2px 0;
+}
+
+.info  {
+    height: 200px;
+    grid-column: 1 / 7;
+    border: 3px solid #009DFF;
+    background-color: #fff;
+    text-align: center;
+}
+
+.container{
+    height: 80vh;
+    display: grid;
+    gap: 10px;
+    margin: 0 10px 0 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    
 }

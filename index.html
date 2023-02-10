@@ -26,9 +26,106 @@
     </nav>
 
     <div>
-        
-        <!--Cycle Counter-->
         <p id="counter" class="timer">0</p>
+        <div class="container">
+            <div class="box">
+                <p class="klas">8А</p>
+                <p class="predmet">Информационни технологии</p>               
+                <p><span class="uchitel">M. Петкова</span> - <span class="staq">113</span></p>
+            </div>
+            <div class="box">
+                <p class="klas">8Б</p>
+                <p class="predmet">Информационни</p>               
+                <p><span class="uchitel">M. Петкова</span> - <span class="staq">113</span></p>
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+            <div class="box">
+                1
+            </div>
+            <div class="box">
+                2
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+            <div class="box">
+                1
+            </div>
+            <div class="box">
+                2
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+            <div class="box">
+                1
+            </div>
+            <div class="box">
+                2
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+            <div class="box">
+                1
+            </div>
+            <div class="box">
+                2
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+            <div class="info">
+                Info
+            </div>
+        </div>
     </div>
 
 
@@ -58,7 +155,7 @@ var broi = 0;
 var chas = 20;
 var mejduchasie = 10;
 var nachalenchas = 16;
-var nachalenmin = 29;
+var nachalenmin = 46;
 var formattedNumber = 0;
 
 
@@ -77,11 +174,15 @@ var minutes = new Date().getMinutes();
         mejduchasie = 5;
     } else mejduchasie = 10;
 
+    mejdu.style.display = "none";
+
 }, 1000);
 
-        
+
+
 //Start Timer Function
 function timer(){
+    
     //Work Timer Countdown
     if(ws.innerText != 0){
         ws.innerText--;
@@ -90,7 +191,7 @@ function timer(){
         ws.innerText = 59;
         wm.innerText--; 
     } else if(wm.innerText == 0 && ws.innerText == 0) {
-        mejdu.style.display = "initial";
+       mejdu.style.display = "initial";
     }
 
     //Break Timer Countdown
@@ -109,7 +210,7 @@ function timer(){
 
     if (mejdu.style.display == "none") {
         chasie.style.display = "initial";
-    }
+    } 
 
     //Increment Counter by one if one full cycle is completed
     if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
