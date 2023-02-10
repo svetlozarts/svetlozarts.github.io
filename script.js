@@ -11,8 +11,8 @@ var startTimer;
 var broi = 0;
 var chas = 20;
 var mejduchasie = 10;
-var nachalenchas = 16;
-var nachalenmin = 52;
+var nachalenchas = 15;
+var nachalenmin = 40;
 
 setInterval(() => {
     var hours = new Date().getHours();
