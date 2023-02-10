@@ -49,17 +49,16 @@ var ws = document.getElementById('w_seconds');
 var bm = document.getElementById('b_minutes');
 var bs = document.getElementById('b_seconds');
 
-var test;
-var mejd = document.getElementById('break-timer');
-var cha = document.getElementById('work-timer');
+const mejdu = document.querySelector('#break-timer');
+const chasie = document.querySelector('#work-timer');
 
 var startTimer;
 
 var broi = 0;
 var chas = 20;
 var mejduchasie = 10;
-var nachalenchas = 18;
-var nachalenmin = 9;
+var nachalenchas = 16;
+var nachalenmin = 20;
 var formattedNumber = 0;
 
 
@@ -78,13 +77,6 @@ var minutes = new Date().getMinutes();
         mejduchasie = 5;
     } else mejduchasie = 10;
 
-    formattedNumber = mejduchasie.toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false
-  });
-    
-  console.log(formattedNumber);
-
 }, 1000);
 
         
@@ -93,27 +85,31 @@ function timer(){
     //Work Timer Countdown
     if(ws.innerText != 0){
         ws.innerText--;
+        mejdu.style.display = "none";
     } else if(wm.innerText != 0 && ws.innerText == 0){
         ws.innerText = 59;
-        wm.innerText--;
+        wm.innerText--; 
+    } else if(wm.innerText == 0 && ws.innerText == 0) {
+        mejdu.style.display = "initial";
     }
 
     //Break Timer Countdown
     if(wm.innerText == 0 && ws.innerText == 0){
+        chasie.style.display = "none";
         if(bs.innerText != 0){
             bs.innerText--;
+            
         } else if(bm.innerText != 0 && bs.innerText == 0){
             bs.innerText = 59;
             bm.innerText--;
+        } else if(bm.innerText == 0 && bs.innerText == 0){
+            chasie.style.display = "initial";
         }
     }
 
-    console.log(wm.innerText);
-    console.log(ws.innerText);
-
-    
-             
-    
+    if (mejdu.style.display == "none") {
+        chasie.style.display = "initial";
+    }
 
     //Increment Counter by one if one full cycle is completed
     if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){

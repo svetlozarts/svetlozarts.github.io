@@ -12,7 +12,7 @@ var broi = 0;
 var chas = 20;
 var mejduchasie = 10;
 var nachalenchas = 15;
-var nachalenmin = 40;
+var nachalenmin = 45;
 
 setInterval(() => {
     var hours = new Date().getHours();
@@ -46,9 +46,6 @@ function timer(){
     if(wm.innerText == 0 && ws.innerText == 0){
         if(bs.innerText != 0){
             bs.innerText--;
-            if (bs.innerText > 10) {
-                
-            }
         } else if(bm.innerText != 0 && bs.innerText == 0){
             bs.innerText = 59;
             bm.innerText--;
