@@ -43,6 +43,10 @@ setInterval(() => {
         } 
     } 
 
+    if (hours == 7 && minutes == 20) {
+        location.reload();
+    } 
+    
     for (let i = 0; i < chasove_m.length; i++) {
         if (chasove_c[i] === hours && chasove_m[i] === minutes && broi != i) {
             broi = i;
