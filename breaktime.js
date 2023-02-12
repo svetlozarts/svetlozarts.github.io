@@ -28,10 +28,10 @@ bmzero.style.display = "none";
 wszero.style.display = "none";
 bszero.style.display = "none";
 
-wm.innerText = 0;
-ws.innerText = chas;
-bm.innerText = 0;
-bs.innerText = mejduchasiq[broi];
+wm.innerText = chas;
+ws.innerText = 0;
+bm.innerText = mejduchasiq[broi];
+bs.innerText = 0;
 
 setInterval(() => {
     var hours = new Date().getHours();
