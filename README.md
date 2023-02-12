@@ -1,1 +1,1 @@
-[website](https://svetlozarts.github.io/)
+[Visit the website](https://svetlozarts.github.io/)
