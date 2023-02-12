@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylea.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <title>ZPG PROGRAMA</title>
 </head>
-<body>
+<body >
     
+    <div id="overlay">
+		<form onsubmit="return validate()">
+			<h1>Login</h1>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username">
+			<br><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password">
+			<br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="error">
+		Error: Incorrect username or password.
+	</div>
+
     <nav class="navbar">
         <div id="time">
-            <a>12:00:00</a>
+            <a>EDIT</a>
         </div>
         <div class="title">
             <a>ADMIN</a>
         </div>
-        <div id="break-timer" class="timer">
-            <span id="bm_zero">0</span><a id="b_minutes">0</a><a class="semicolon">:</a><span id="bs_zero">0</span><a id="b_seconds">9</a>
+        <div id="break-timer" class="timer" style="display: none;">
+            <span id="bm_zero">0</span><a id="b_minutes">0</a><a class="semicolon">:</a><span id="bs_zero">0</span><a id="b_seconds">0</a>
         </div>
         <div id="work-timer" class="timer">
-            <span id="wm_zero">0</span><a id="w_minutes">0</a><a class="semicolon">:</a><span id="ws_zero">0</span><a id="w_seconds">9</a>
+            <span id="wm_zero"></span><a id="w_minutes"></a><a class="semicolon"></a><span id="ws_zero"></span><a id="w_seconds">MODE</a>
         </div>
     </nav>
 
@@ -179,13 +195,15 @@
                 <p><span class="uchitel">----</span> - <span class="staq">---</span></p>
             </div>
             <div class="info">
-                <p id="info1"> ДОБРЕ ДОШЛИ!</p>
+                <p id="website2" contenteditable="true"> ДОБРЕ ДОШЛИ!</p>
             </div>
         </div>
     </div>
 
 
-<script src="realtime.js"></script> 
-<script src="breaktime.js"></script>
+<!-- <script src="realtime.js"></script>  -->
+<!-- <script src="breaktime.js"></script> -->
+<script src="admin.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
