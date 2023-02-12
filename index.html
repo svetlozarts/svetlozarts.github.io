@@ -18,15 +18,15 @@
             <a>ЗПГ "Климент Тимирязев"</a>
         </div>
         <div id="break-timer" class="timer">
-            <a id="b_minutes">10</a><a class="semicolon">:</a><a id="b_seconds">00</a>
+            <span id="bm_zero">0</span><a id="b_minutes">0</a><a class="semicolon">:</a><span id="bs_zero">0</span><a id="b_seconds">9</a>
         </div>
         <div id="work-timer" class="timer">
-            <a id="w_minutes">40</a><a class="semicolon">:</a><a id="w_seconds">00</a>
+            <span id="wm_zero">0</span><a id="w_minutes">0</a><a class="semicolon">:</a><span id="ws_zero">0</span><a id="w_seconds">9</a>
         </div>
     </nav>
 
     <div>
-        <p id="counter" class="timer" style="display: none;">0</p>
+         <p id="counter" class="timer" style="display: none;" p>0</p> 
         <div class="container">
             <div class="box">
                 <p class="klas">8А</p>
@@ -179,112 +179,13 @@
                 <p><span class="uchitel">----</span> - <span class="staq">---</span></p>
             </div>
             <div class="info">
-                <p> ДОБРЕ ДОШЛИ ГИМНАЗИСТИ!</p>
-                <p> Тук ще виждате предстоящия час за всеки един клас. </p>
+                <p id="info1"> ДОБРЕ ДОШЛИ!</p>
             </div>
         </div>
     </div>
 
 
-<script>
-    let time = document.getElementById("time");
-
-    
-    setInterval(() => {
-        let d = new Date();
-        time.innerHTML = d.toLocaleTimeString([], {hour12: false,});
-    }, 1000);
-</script> 
-
-<script>
-var wm = document.getElementById('w_minutes');
-var ws = document.getElementById('w_seconds');
-
-var bm = document.getElementById('b_minutes');
-var bs = document.getElementById('b_seconds');
-
-const mejdu = document.querySelector('#break-timer');
-const chasie = document.querySelector('#work-timer');
-
-var startTimer;
-
-var broi = 0;
-var chas = 20;
-var mejduchasie = 10;
-var nachalenchas = 7;
-var nachalenmin = 30;
-var formattedNumber = 0;
-
-mejdu.style.display = "none";
-
-setInterval(() => {
-    var hours = new Date().getHours();
-var minutes = new Date().getMinutes();
-    if (hours == nachalenchas && minutes == nachalenmin) {
-        if(startTimer === undefined){
-            startTimer = setInterval(timer, 1000)
-        } 
-    } 
-
-    if (broi == 1) {
-        mejduchasie = 25;
-    } else if (broi == 5) {
-        mejduchasie = 5;
-    } else mejduchasie = 10;
-
-}, 1000);
-
-
-
-//Start Timer Function
-function timer(){
-    
-    //Work Timer Countdown
-    if(ws.innerText != 0){
-        ws.innerText--;
-        mejdu.style.display = "none";
-    } else if(wm.innerText != 0 && ws.innerText == 0){
-        ws.innerText = 59;
-        wm.innerText--; 
-    } else if(wm.innerText == 0 && ws.innerText == 0) {
-       mejdu.style.display = "initial";
-    }
-
-    //Break Timer Countdown
-    if(wm.innerText == 0 && ws.innerText == 0){
-        chasie.style.display = "none";
-        if(bs.innerText != 0){
-            bs.innerText--;
-            
-        } else if(bm.innerText != 0 && bs.innerText == 0){
-            bs.innerText = 59;
-            bm.innerText--;
-        } else if(bm.innerText == 0 && bs.innerText == 0){
-            chasie.style.display = "initial";
-        }
-    }
-
-    if (mejdu.style.display == "none") {
-        chasie.style.display = "initial";
-    } 
-
-    //Increment Counter by one if one full cycle is completed
-    if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
-        wm.innerText = chas;
-        ws.innerText = "00";
-
-        bm.innerText = mejduchasie;
-        bs.innerText = "00";
-
-        document.getElementById('counter').innerText++;
-        broi++;
-    }
-}
-
-//Stop Timer Function
-function stopInterval(){
-    clearInterval(startTimer);
-}
-</script>
+<script src="realtime.js"></script> 
+<script src="breaktime.js"></script>
 </body>
 </html>
