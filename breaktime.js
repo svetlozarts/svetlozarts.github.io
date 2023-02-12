@@ -12,7 +12,7 @@ const info = document.querySelector("#info1");
 
 var startTimer;
 
-var chas = 25;
+var chas = 40;
 var mejduchasie = 10;
 var broi = 0;
 
@@ -103,11 +103,11 @@ function timer(){
     if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){       
         broi++;
 
-        wm.innerText = 0;
-        ws.innerText = chas;
+        wm.innerText = chas;
+        ws.innerText = 0;
 
-        bm.innerText = 0;
-        bs.innerText = mejduchasiq[broi];     
+        bm.innerText = mejduchasiq[broi];
+        bs.innerText = 0;     
     }
 }
 
