@@ -18,8 +18,8 @@ var broi = 0;
 
 var testsame;
 
-const chasove_c = [7, 8, 9, 10, 11, 19, 12, 13];
-const chasove_m = [30, 20, 10, 15, 5, 23, 40, 30];
+const chasove_c = [7, 8, 9, 10, 11, 11, 12, 13];
+const chasove_m = [30, 20, 10, 15, 5, 55, 40, 30];
 const mejduchasiq = [10, 10, 25, 10, 10, 5, 10];
 
 mejdu.style.display = "none";
