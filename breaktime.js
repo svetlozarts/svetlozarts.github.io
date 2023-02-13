@@ -12,15 +12,17 @@ const info = document.querySelector("#info1");
 
 var startTimer;
 
-var chas = 40;
-var mejduchasie = 10;
+var chas = 10;
+var mejduchasie = 5;
 var broi = 0;
 
 var testsame;
 
-const chasove_c = [7, 8, 9, 10, 11, 11, 12, 13];
-const chasove_m = [30, 20, 10, 15, 5, 55, 40, 30];
-const mejduchasiq = [10, 10, 25, 10, 10, 5, 10];
+const chasove_c = [7, 8, 9, 10, 11, 11, 12];
+const chasove_m = [30, 20, 10, 15, 5, 55, 40];
+const chasove_cs = [7, 8, 9, 10, 10, 11, 12];
+const chasove_ms = [20, 10, 0, 5, 55, 45, 35];
+const mejduchasiq = [10, 10, 25, 10, 10, 5];
 
 mejdu.style.display = "none";
 wmzero.style.display = "none";
@@ -83,9 +85,7 @@ function timer(){
         wm.innerText--; 
     } 
     if(wm.innerText == 0 && (ws.innerText ==  0 || ws.innerText == 0 )) {  
-        mejdu.style.display = "initial";
-        
-
+        mejdu.style.display = "initial"; 
     }
     if(bm.innerText == 0 && (bs.innerText == 1 || bs.innerText == 0 )) {  
         mejdu.style.display = "none";
@@ -108,13 +108,14 @@ function timer(){
     //Increment Counter by one if one full cycle is completed
     if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){       
         broi++;
-
+        
         wm.innerText = chas;
         ws.innerText = 0;
 
-        bm.innerText = mejduchasiq[broi];
-        bs.innerText = 0;     
+        bm.innerText = mejduchasiq[broi]; 
+        bs.innerText = 0;    
     }
+
 }
 
 //Stop Timer Function

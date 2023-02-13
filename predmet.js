@@ -34,7 +34,7 @@ const predmet12e = document.querySelector('.predmet12e');
 var out = [];
 var product;
 var predmet = 0;
-var broi = 0+predmet;
+var broi2 = 0;
 
 fetch("programa.json")
 .then(function(response){
@@ -45,36 +45,37 @@ fetch("programa.json")
 		out.push(product)
 	}
 	setInterval(() => {
-		predmet8a.innerText = Object.values(out[broi])[day];
-		predmet8b.innerText = Object.values(out[broi+(7*1)])[day];
-		predmet8v.innerText = Object.values(out[broi+(7*2)])[day];
-		predmet8g.innerText = Object.values(out[broi+(7*3)])[day];
-		predmet8d.innerText = Object.values(out[broi+(7*4)])[day];
-		predmet8e.innerText = Object.values(out[broi+(7*5)])[day];
-		predmet9a.innerText = Object.values(out[broi+(7*6)])[day];
-		predmet9b.innerText = Object.values(out[broi+(7*7)])[day];
-		predmet9v.innerText = Object.values(out[broi+(7*8)])[day];
-		predmet9g.innerText = Object.values(out[broi+(7*9)])[day];
-		predmet9d.innerText = Object.values(out[broi+(7*10)])[day];
-		predmet9e.innerText = Object.values(out[broi+(7*11)])[day];
-		predmet10a.innerText = Object.values(out[broi+(7*12)])[day];
-		predmet10b.innerText = Object.values(out[broi+(7*13)])[day];
-		predmet10v.innerText = Object.values(out[broi+(7*14)])[day];
-		predmet10g.innerText = Object.values(out[broi+(7*15)])[day];
-		predmet10d.innerText = Object.values(out[broi+(7*16)])[day];
-		predmet10e.innerText = Object.values(out[broi+(7*17)])[day];
-		predmet11a.innerText = Object.values(out[broi+(7*18)])[day];
-		predmet11b.innerText = Object.values(out[broi+(7*19)])[day];
-		predmet11v.innerText = Object.values(out[broi+(7*20)])[day];
-		predmet11g.innerText = Object.values(out[broi+(7*21)])[day];
-		predmet11d.innerText = Object.values(out[broi+(7*22)])[day];
-		predmet11e.innerText = Object.values(out[broi+(7*23)])[day];
-		predmet12a.innerText = Object.values(out[broi+(7*24)])[day];
-		predmet12b.innerText = Object.values(out[broi+(7*25)])[day];
-		predmet12v.innerText = Object.values(out[broi+(7*26)])[day];
-		predmet12g.innerText = Object.values(out[broi+(7*27)])[day];
-		predmet12d.innerText = Object.values(out[broi+(7*28)])[day];
-		predmet12e.innerText = Object.values(out[broi+(7*29)])[day];
+		broi2 = 0 + predmet;
+		predmet8a.innerText = Object.values(out[broi2])[day];
+		predmet8b.innerText = Object.values(out[broi2+(7*1)])[day];
+		predmet8v.innerText = Object.values(out[broi2+(7*2)])[day];
+		predmet8g.innerText = Object.values(out[broi2+(7*3)])[day];
+		predmet8d.innerText = Object.values(out[broi2+(7*4)])[day];
+		predmet8e.innerText = Object.values(out[broi2+(7*5)])[day];
+		predmet9a.innerText = Object.values(out[broi2+(7*6)])[day];
+		predmet9b.innerText = Object.values(out[broi2+(7*7)])[day];
+		predmet9v.innerText = Object.values(out[broi2+(7*8)])[day];
+		predmet9g.innerText = Object.values(out[broi2+(7*9)])[day];
+		predmet9d.innerText = Object.values(out[broi2+(7*10)])[day];
+		predmet9e.innerText = Object.values(out[broi2+(7*11)])[day];
+		predmet10a.innerText = Object.values(out[broi2+(7*12)])[day];
+		predmet10b.innerText = Object.values(out[broi2+(7*13)])[day];
+		predmet10v.innerText = Object.values(out[broi2+(7*14)])[day];
+		predmet10g.innerText = Object.values(out[broi2+(7*15)])[day];
+		predmet10d.innerText = Object.values(out[broi2+(7*16)])[day];
+		predmet10e.innerText = Object.values(out[broi2+(7*17)])[day];
+		predmet11a.innerText = Object.values(out[broi2+(7*18)])[day];
+		predmet11b.innerText = Object.values(out[broi2+(7*19)])[day];
+		predmet11v.innerText = Object.values(out[broi2+(7*20)])[day];
+		predmet11g.innerText = Object.values(out[broi2+(7*21)])[day];
+		predmet11d.innerText = Object.values(out[broi2+(7*22)])[day];
+		predmet11e.innerText = Object.values(out[broi2+(7*23)])[day];
+		predmet12a.innerText = Object.values(out[broi2+(7*24)])[day];
+		predmet12b.innerText = Object.values(out[broi2+(7*25)])[day];
+		predmet12v.innerText = Object.values(out[broi2+(7*26)])[day];
+		predmet12g.innerText = Object.values(out[broi2+(7*27)])[day];
+		predmet12d.innerText = Object.values(out[broi2+(7*28)])[day];
+		predmet12e.innerText = Object.values(out[broi2+(7*29)])[day];
 	}, 1000);
 
 });
@@ -85,10 +86,12 @@ var minutes = new Date().getMinutes();
 const d = new Date();
 let day = d.getDay();
 
-
-for (let i = 0; i < chasove_m.length; i++) {
-	if (chasove_c[i] === hours && chasove_m[i] === minutes) {
-		predmet = i;
-		break;
+setInterval(() => {
+	for (let i = 0; i < chasove_ms.length; i++) {
+		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
+			predmet = i;
+			break;
+		}
 	}
-}
+}, 1);
+
