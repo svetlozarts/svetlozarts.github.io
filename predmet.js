@@ -44,10 +44,7 @@ fetch("programa.json")
 	for(product of products){
 		out.push(product)
 	}
-	// console.log(out[0]['8а']);	
-
 	setInterval(() => {
-		console.log(Object.values(out[broi])[day]);
 		predmet8a.innerText = Object.values(out[broi])[day];
 		predmet8b.innerText = Object.values(out[broi+(7*1)])[day];
 		predmet8v.innerText = Object.values(out[broi+(7*2)])[day];
@@ -79,8 +76,6 @@ fetch("programa.json")
 		predmet12d.innerText = Object.values(out[broi+(7*28)])[day];
 		predmet12e.innerText = Object.values(out[broi+(7*29)])[day];
 	}, 1000);
-
-	
 
 });
 
