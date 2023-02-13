@@ -73,5 +73,5 @@ text-shadow: 2px 2px 5px black;
     gap: 10px;
     margin: 10px 10px 10px 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 130px 130px 130px 130px 130px; 
+    grid-template-rows: 140px 140px 140px 140px 140px; 
 }

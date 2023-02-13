@@ -12,8 +12,8 @@ const info = document.querySelector("#info1");
 
 var startTimer;
 
-var chas = 10;
-var mejduchasie = 5;
+var chas = 40;
+var mejduchasie = 10;
 var broi = 0;
 
 var testsame;

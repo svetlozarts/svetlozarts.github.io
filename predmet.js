@@ -29,8 +29,6 @@ const predmet12g = document.querySelector('.predmet12g');
 const predmet12d = document.querySelector('.predmet12d');
 const predmet12e = document.querySelector('.predmet12e');
 
-
-
 var out = [];
 var product;
 var predmet = 0;
@@ -45,6 +43,7 @@ fetch("programa.json")
 		out.push(product)
 	}
 	setInterval(() => {
+		day = d.getDay();
 		broi2 = 0 + predmet;
 		predmet8a.innerText = Object.values(out[broi2])[day];
 		predmet8b.innerText = Object.values(out[broi2+(7*1)])[day];
