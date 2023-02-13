@@ -33,8 +33,8 @@ const predmet12e = document.querySelector('.predmet12e');
 
 var out = [];
 var product;
-var predmet;
-var broi = 0;
+var predmet = 0;
+var broi = 0+predmet;
 
 fetch("programa.json")
 .then(function(response){
