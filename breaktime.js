@@ -84,6 +84,8 @@ function timer(){
     } 
     if(wm.innerText == 0 && (ws.innerText ==  0 || ws.innerText == 0 )) {  
         mejdu.style.display = "initial";
+        
+
     }
     if(bm.innerText == 0 && (bs.innerText == 1 || bs.innerText == 0 )) {  
         mejdu.style.display = "none";
