@@ -79,13 +79,16 @@ fetch("programa.json")
 
 });
 
-var hours = new Date().getHours();
-var minutes = new Date().getMinutes();
+
 
 const d = new Date();
 let day = d.getDay();
 
 setInterval(() => {
+
+	var hours = new Date().getHours();
+	var minutes = new Date().getMinutes();
+
 	for (let i = 0; i < chasove_ms.length; i++) {
 		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
 			predmet = i;
