@@ -43,8 +43,20 @@ fetch("programa.json")
 		out.push(product)
 	}
 	setInterval(() => {
+
+		var hours = new Date().getHours();
+		var minutes = new Date().getMinutes();
+
+	for (let i = 0; i < chasove_ms.length; i++) {
+		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
+			predmet = i;
+			break;
+		}
+	}
+
 		day = d.getDay();
 		broi2 = 0 + predmet;
+		
 		predmet8a.innerText = Object.values(out[broi2])[day];
 		predmet8b.innerText = Object.values(out[broi2+(7*1)])[day];
 		predmet8v.innerText = Object.values(out[broi2+(7*2)])[day];
@@ -79,21 +91,11 @@ fetch("programa.json")
 
 });
 
-
-
 const d = new Date();
 let day = d.getDay();
 
 setInterval(() => {
 
-	var hours = new Date().getHours();
-	var minutes = new Date().getMinutes();
-
-	for (let i = 0; i < chasove_ms.length; i++) {
-		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
-			predmet = i;
-			break;
-		}
-	}
+	
 }, 1);
 
