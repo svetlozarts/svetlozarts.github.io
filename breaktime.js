@@ -100,11 +100,6 @@ function timer(){
         mejdu.style.display = "none";
     }
 
-    if (hours == 12 && minutes > 40) {
-        mejdu.style.display = "none";
-        chasie.style.display = "none";
-    } 
-
     //Break Timer Countdown
     if(wm.innerText == 0 && ws.innerText == 0){       
         if(bs.innerText != 0){
@@ -115,7 +110,7 @@ function timer(){
         }
     }
 
-    if (mejdu.style.display == "none" && !(hours == 12 && minutes > 40)) {
+    if (mejdu.style.display == "none") {
         chasie.style.display = "initial";
     } else chasie.style.display = "none";
 
