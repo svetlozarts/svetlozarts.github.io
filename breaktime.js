@@ -37,6 +37,10 @@ ws.innerText = 0;
 bm.innerText = mejduchasiq[broi];
 bs.innerText = 0;
 
+document.addEventListener("load", function(){
+    location.reload();
+});
+
 setInterval(() => {
     var hours = new Date().getHours();
     var minutes = new Date().getMinutes();
@@ -49,7 +53,10 @@ setInterval(() => {
 
     if (hours == 7 && minutes == 20) {
         location.reload();
-    } 
+    }
+    
+    
+
     
     for (let i = 0; i < chasove_m.length; i++) {
         if (chasove_c[i] === hours && chasove_m[i] === minutes && broi != i) {
@@ -93,6 +100,11 @@ function timer(){
         mejdu.style.display = "none";
     }
 
+    if (hours == 12 && minutes > 40) {
+        mejdu.style.display = "none";
+        chasie.style.display = "none";
+    } 
+
     //Break Timer Countdown
     if(wm.innerText == 0 && ws.innerText == 0){       
         if(bs.innerText != 0){
@@ -103,7 +115,7 @@ function timer(){
         }
     }
 
-    if (mejdu.style.display == "none") {
+    if (mejdu.style.display == "none" && !(hours == 12 && minutes > 40)) {
         chasie.style.display = "initial";
     } else chasie.style.display = "none";
 
