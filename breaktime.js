@@ -14,7 +14,7 @@ var cont = document.querySelector(".container");
 
 var startTimer;
 
-var chas = 1;
+var chas = 40;
 var mejduchasie = 10;
 var broi = 0;
 
@@ -34,7 +34,6 @@ bmzero.style.display = "none";
 wszero.style.display = "none";
 bszero.style.display = "none";
 vid.style.display = "none";
-
 
 wm.innerText = chas;
 ws.innerText = 0;
