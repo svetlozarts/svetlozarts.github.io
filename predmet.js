@@ -50,6 +50,11 @@ fetch("programa.json")
 	for (let i = 0; i < chasove_ms.length; i++) {
 		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
 			predmet = i;
+			if (i != 0) {
+				vid.style.display = "block";
+        	cont.style.display = "none";
+        	vid.play();
+			}		
 			break;
 		}
 	}

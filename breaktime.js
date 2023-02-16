@@ -9,10 +9,12 @@ const wszero = document.querySelector('#ws_zero');
 const bmzero = document.querySelector('#bm_zero');
 const wmzero = document.querySelector('#wm_zero');
 const info = document.querySelector("#info1");
+var vid = document.getElementById("Video");
+var cont = document.querySelector(".container");
 
 var startTimer;
 
-var chas = 40;
+var chas = 1;
 var mejduchasie = 10;
 var broi = 0;
 
@@ -31,6 +33,8 @@ wmzero.style.display = "none";
 bmzero.style.display = "none";
 wszero.style.display = "none";
 bszero.style.display = "none";
+vid.style.display = "none";
+
 
 wm.innerText = chas;
 ws.innerText = 0;
@@ -76,6 +80,11 @@ setInterval(() => {
         bmzero.style.display = "initial";
     } else bmzero.style.display = "none";
 
+    vid.addEventListener('ended', function() {
+        vid.style.display = "none";
+        cont.style.display = "grid";
+      })
+
 }, 1);
 
 //Start Timer Function
@@ -94,7 +103,9 @@ function timer(){
         mejdu.style.display = "initial"; 
     }
     if(bm.innerText == 0 && (bs.innerText == 1 || bs.innerText == 0 )) {  
-        mejdu.style.display = "none";
+        mejdu.style.display = "none";     
+        vid.style.display = "none";
+        vid.pause();
     }
 
     //Break Timer Countdown
