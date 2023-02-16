@@ -14,19 +14,19 @@ var cont = document.querySelector(".container");
 
 var startTimer;
 
-var chas = 40;
+var chas = 1;
 var mejduchasie = 10;
 var broi = 0;
 
 var testsame;
 
-const chasove_c = [7, 8, 9, 10, 11, 11, 12];
-const chasove_m = [30, 20, 10, 15, 5, 55, 40];
+const chasove_c = [7, 8, 9, 22, 11, 11, 12];
+const chasove_m = [30, 20, 10, 27, 5, 55, 40];
 
 const mejduchasiq = [10, 10, 25, 10, 10, 5];
 
-const chasove_cs = [7, 8, 9, 9, 10, 11, 12];
-const chasove_ms = [20, 10, 0, 50, 55, 45, 35];
+const chasove_cs = [7, 8, 9, 9, 22, 11, 12];
+const chasove_ms = [20, 10, 0, 50, 28, 45, 35];
 
 mejdu.style.display = "none";
 wmzero.style.display = "none";
@@ -43,6 +43,8 @@ bs.innerText = 0;
 document.addEventListener("load", function(){
     location.reload();
 });
+
+vid.pause();
 
 setInterval(() => {
     var hours = new Date().getHours();
