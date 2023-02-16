@@ -54,6 +54,10 @@ fetch("programa.json")
 		}
 	}
 
+	if (hours == 7  && minutes <= 30 ) {
+		predmet = 0;
+	}
+
 		day = d.getDay();
 		broi2 = 0 + predmet;
 		

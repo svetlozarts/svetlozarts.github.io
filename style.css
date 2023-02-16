@@ -55,6 +55,7 @@ text-shadow: 2px 2px 5px black;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .info  {
@@ -73,5 +74,5 @@ text-shadow: 2px 2px 5px black;
     gap: 10px;
     margin: 10px 10px 10px 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 140px 140px 140px 140px 140px; 
+    grid-template-rows: 130px 130px 130px 130px 130px; 
 }
