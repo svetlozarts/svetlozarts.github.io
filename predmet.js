@@ -49,7 +49,7 @@ fetch("programa.json")
 
 	for (let i = 0; i < chasove_ms.length; i++) {
 		if (chasove_cs[i] === hours && chasove_ms[i] === minutes) {
-			predmet = i;		
+			predmet = i;
 			break;
 		}
 	}
