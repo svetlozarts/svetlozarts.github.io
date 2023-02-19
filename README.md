@@ -1,1 +1,0 @@
-[Visit the website](https://svetlozarts.github.io/)
