@@ -33,7 +33,6 @@ let day = new Date().getDay();
 
 var out = [];
 var product;
-predmet;
 
 fetch("programa.json")
 .then(function(response){
@@ -45,6 +44,11 @@ fetch("programa.json")
 	}
 
 	setInterval(() => {
+
+		if (predmet == null || predmet >= 7) {
+			predmet = 0;
+		}
+
         predmet8a.innerText = Object.values(out[predmet])[day];
 		predmet8b.innerText = Object.values(out[predmet+(7*1)])[day];
 		predmet8v.innerText = Object.values(out[predmet+(7*2)])[day];
