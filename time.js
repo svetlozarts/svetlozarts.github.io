@@ -30,7 +30,7 @@ var predmet = 0;
 
       if (!startTime) {
         countdownElement.innerHTML = "40:00";
-        countdownElement.style.color = "#009DFF";
+        countdownElement.style.color = "var(--main)";
         countdownElement.style.textShadow = "none";
         return;
       }

@@ -1,3 +1,9 @@
+:root {
+    /* --main: #009DFF; */
+    --main: #ff0099;
+    --back: #D3EEFF;
+  }
+  
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +12,7 @@
 html, body {
     height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #D3EEFF;
+    background-color: var(--back);
 }
 
 .container {
@@ -19,7 +25,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #009DFF;
+    background-color: var(--main);
     color: #FFFFFF;
     padding: 20px;
 }
@@ -48,7 +54,7 @@ html, body {
 .box {
     background-color: #FFFFFF;
     box-shadow: 1px 1px 2px black;
-    border: 3px solid #009DFF;
+    border: 3px solid var(--main);
 }
 
 .main p{
