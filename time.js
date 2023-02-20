@@ -1,4 +1,4 @@
-var startTimes = ["07:30", "08:10", "08:20", "09:00", "09:10", "09:50", "10:15", "10:55", "11:05", "11:45", "11:55", "12:35", "12:40", "13:20"];
+var startTimes = ["7:30", "8:10", "08:20", "09:00", "09:10", "09:50", "10:15", "10:55", "11:05", "11:45", "11:55", "12:35", "12:40", "13:20"];
 var countdownElement = document.getElementById("timer");
 var predmet = 0;
 
@@ -41,10 +41,10 @@ var predmet = 0;
       countdownElement.innerHTML = minutesRemaining.toString().padStart(2, "0") + ":" + secondsRemaining.toString().padStart(2, "0");
 
       if (isClassTime()) {
-        countdownElement.style.color = "lime";
+        countdownElement.style.color = "var(--break)";
         countdownElement.style.textShadow = "1px 1px 5px black";
       } else {
-        countdownElement.style.color = "red";
+        countdownElement.style.color = "var(--class)";
         countdownElement.style.textShadow = "1px 1px 5px white";
       }
     }
