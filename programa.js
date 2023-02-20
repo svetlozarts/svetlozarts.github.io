@@ -45,8 +45,8 @@ fetch("programa.json")
 
 	setInterval(() => {
 
-		if (predmet == null || predmet >= 7) {
-			predmet = 0;
+		if (predmet >= 6) {
+		 	predmet = 6;
 		}
 
         predmet8a.innerText = Object.values(out[predmet])[day];
