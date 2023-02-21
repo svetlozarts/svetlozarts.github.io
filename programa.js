@@ -29,7 +29,7 @@ const predmet12g = document.querySelector('.predmet12g');
 const predmet12d = document.querySelector('.predmet12d');
 const predmet12e = document.querySelector('.predmet12e');
 
-let day = new Date().getDay();
+
 
 var out = [];
 var product;
@@ -44,6 +44,8 @@ fetch("programa.json")
 	}
 
 	setInterval(() => {
+
+		let day = new Date().getDay();
 
 		if (predmet >= 6) {
 		 	predmet = 6;
