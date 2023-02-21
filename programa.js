@@ -47,9 +47,9 @@ fetch("programa.json")
 
 		let day = new Date().getDay();
 
-		if (predmet >= 6) {
-		 	predmet = 6;
-		}
+		// if (predmet >= 6) {
+		//  	predmet = 6;
+		// }
 
         predmet8a.innerText = Object.values(out[predmet])[day];
 		predmet8b.innerText = Object.values(out[predmet+(7*1)])[day];

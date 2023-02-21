@@ -1,6 +1,6 @@
 var startTimes = ["7:30", "8:10", "08:20", "09:00", "09:10", "09:50", "10:15", "10:55", "11:05", "11:45", "11:55", "12:35", "12:40", "13:20"];
 var countdownElement = document.getElementById("timer");
-var predmet = 0;
+var predmet;
 
     function getNextStartTime(now) {
       var startTime = new Date();
