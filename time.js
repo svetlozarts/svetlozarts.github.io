@@ -48,6 +48,13 @@ var predmet = 0;
         countdownElement.style.textShadow = "1px 1px 5px white";
       }
     }
+
+    window.onload = function() {
+      if(!window.location.hash) {
+          window.location = window.location + '#loaded';
+          window.location.reload();
+      }
+  }
    
     updateCountdown();
     setInterval(updateCountdown, 1000);
