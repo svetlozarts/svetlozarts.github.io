@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const selectedHour = document.getElementById("hour").value;
         const selectedDay = document.getElementById("day").value;
 
+        
+
         fetch(programaJsonPath)
             .then(response => response.json())
             .then(data => {
@@ -97,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("class").addEventListener("change", updateSubjectPreview);
             document.getElementById("hour").addEventListener("change", updateSubjectPreview);
             document.getElementById("day").addEventListener("change", updateSubjectPreview);
+
+            window.addEventListener("load", updateSubject);
         })
         .catch(error => {
             console.error("Error loading JSON data:", error);
