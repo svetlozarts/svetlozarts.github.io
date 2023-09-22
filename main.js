@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(programaJsonPath)
             .then(response => response.json())
             .then(data => {
-                let selectedSubject = "Select a day";
+                let selectedSubject = data[dayKey][selectedDay];
 
                 for (const dayKey in data) {
                     if (data[dayKey][selectedClass] && data[dayKey][selectedClass] === selectedHour) {
