@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Class Schedule</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Class Schedule</h1>
+        <form id="scheduleForm">
+            <label for="class">Class:</label>
+            <select id="class" name="class">
+                <!-- Class options will be populated dynamically by JavaScript -->
+            </select>
+
+            <label for="hour">Hour:</label>
+            <select id="hour" name="hour">
+                <!-- Hour options will be populated dynamically by JavaScript -->
+            </select>
+
+            <label for="day">Day:</label>
+            <select id="day" name="day">
+                <!-- Day options will be populated dynamically by JavaScript -->
+            </select>
+
+            <label for="subject" class="center-input">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter subject" class="center-input">
+
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
