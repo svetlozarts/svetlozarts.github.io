@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("hour").addEventListener("change", updateSubjectPreview);
             document.getElementById("day").addEventListener("change", updateSubjectPreview);
 
-            window.addEventListener("load", updateSubject);
+            window.addEventListener("load", updateSubjectPreview);
         })
         .catch(error => {
             console.error("Error loading JSON data:", error);
