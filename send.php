@@ -1,32 +1,50 @@
 <?php
+// Set the content type to JSON
+header('Content-Type: application/json');
+
 // Define the path to the JSON file
-$jsonFilePath = "programa.json";
+$jsonFilePath = 'programa.json';
 
-// Get data from the POST request
-$data = json_decode(file_get_contents("php://input"), true);
+// Check if the request method is POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the JSON data from the request body
+    $jsonData = file_get_contents('php://input');
 
-if ($data !== null) {
-    // Read the existing JSON file content
-    $existingData = json_decode(file_get_contents($jsonFilePath), true);
+    // Decode the JSON data into a PHP array
+    $dataToSave = json_decode($jsonData, true);
 
-    if ($existingData !== null) {
-        // Update the JSON data with the new values
-        foreach ($data as $key => $value) {
-            $existingData[$key] = $value;
-        }
+    if ($dataToSave !== null) {
+        // Read the existing JSON file content
+        $existingData = file_get_contents($jsonFilePath);
 
-        // Encode the updated data back to JSON format
-        $jsonData = json_encode($existingData, JSON_PRETTY_PRINT);
+        // Decode the existing JSON data into a PHP array
+        $existingDataArray = json_decode($existingData, true);
 
-        if (file_put_contents($jsonFilePath, $jsonData)) {
-            echo json_encode(["message" => "Data saved successfully."]);
+        if ($existingDataArray !== null) {
+            // Merge the new data with the existing data
+            $existingDataArray[] = $dataToSave;
+
+            // Encode the merged data back to JSON format
+            $jsonToWrite = json_encode($existingDataArray, JSON_PRETTY_PRINT);
+
+            // Write the JSON data back to the file, overwriting the existing content
+            if (file_put_contents($jsonFilePath, $jsonToWrite) !== false) {
+                // Data successfully saved
+                echo json_encode(['status' => 'success', 'message' => 'Data saved successfully']);
+            } else {
+                // Error writing to the file
+                echo json_encode(['status' => 'error', 'message' => 'Error saving data']);
+            }
         } else {
-            echo json_encode(["error" => "Failed to save data."]);
+            // Error decoding existing data
+            echo json_encode(['status' => 'error', 'message' => 'Error decoding existing data']);
         }
     } else {
-        echo json_encode(["error" => "Invalid JSON data in the file."]);
+        // Error decoding JSON from request body
+        echo json_encode(['status' => 'error', 'message' => 'Error decoding JSON from request body']);
     }
 } else {
-    echo json_encode(["error" => "Invalid POST data."]);
+    // Request method is not POST
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
 ?>
